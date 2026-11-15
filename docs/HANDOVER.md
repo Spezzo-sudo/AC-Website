@@ -1,26 +1,17 @@
-# Übergabe
+# Übergabe · kompakter Finder
 
-## Ziel und Abgrenzung
+## Repository und Hosting
 
-Nur Spezzo-sudo/AC-Website bearbeiten. Bestehende Domain nicht ohne konkreten Auftrag umstellen. Funktionale Konzeptwebsite mit Beispielprofilen; noch keine rechtliche oder technische Fachplanung und keine echte Partneranbindung.
+Ausschliesslich Spezzo-sudo/AC-Website. Cloudflare Pages: klimafinder-preview, https://klimafinder-preview.pages.dev. `main` wird automatisch veröffentlicht; `npm run build`, `dist`, Node 22. Bestehende Domain klimafinder.ch wird nicht umgestellt. Der alte Klimafinder-CH-Code wurde nur als Analysequelle genutzt und wird nicht übernommen oder verändert.
 
-## Stand
+## Produktstand
 
-Startseite, Finder (5 Schritte), Ergebnis, Stromrechner, Vergleich/Händlerdialog, Kantonsübersicht, Ratgeber, Finanzierungsprinzip, Datenschutz/Impressum und lokaler Projektbrief sind umgesetzt. Vier Sprachen, modulare JS/CSS-Dateien, keine Fremdpakete. Alle Datenplatzhalter sichtbar. Der Finder darf unbekannte Montageoption nie als Genehmigung interpretieren. Produktive Empfehlungen nur mit geprüftem CH-Liefernachweis und Lagerstatus. Aktuelle Anzeige ist explizit Demo.
+Vier Kernansichten, maximal zwei freiwillige Präzisierungen und direkt überspringbarer Ergebnisausgang. Keine Score-Gewichte. Vier Gerätearten, eine Haupt-/Alternativrichtung, klare offene und ausgeschlossene Zustände. Bekannte räumliche Angaben werden wiederverwendet, Zustimmung bleibt nachgelagert. Ergebnis kann auch keine tragfähige Richtung oder Fachplanungsbedarf sein. Persönlicher Vergleich prüft Klasse und illustrative Leistung, freie Auswahl bleibt erhalten. Bearbeitung ist gezielt; Abbrechen verwirft den Entwurf. Standort, Wohnstatus und Budget nachgelagert und freiwillig. Details: FINDER.md.
+
+## Daten- und Launchgrenzen
+
+Alle Geräteprofile fiktiv. Keine echten Preise, Lieferzusagen, Partner oder rechtlichen Bewertungen. Berechnungsannahmen und Klassenreihenfolge vor echtem Launch fachlich validieren. Persönliche Ergebnisse sind keine Planung oder technische/rechtliche Freigabe. Keine Übermittlung an Betriebe. Betreiber-/Hostingangaben ergänzen. Rechercheaufträge: RESEARCH_PROMPTS.md. Bestehende Quellen aus Klimafinder-CH müssen vor Übernahme erneut geprüft werden.
 
 ## Prüfungen
 
-`npm run check`, `npm test` und `npm run build` erfolgreich. Acht Tests. Browserdurchlauf: Finder mit Dachgeschoss, ZH/Winterthur, unklarer Montage und Ruhepriorität ergibt mobiles Splitkonzept, 2,2–3,3 kW als Beispiel. Stromrechnung: 0,85 kW × 5 h × 60 Tage × CHF 0,30 = CHF 76,50; 10 h = CHF 153. Sprachwechsel zu Französisch bewahrt den flüchtigen Zustand. Händlerdialog kennzeichnet fiktive Angebote. Mobile Darstellung und Finder zusätzlich im 390 × 844 px breiten Browser-Frame geprüft; Dokumentbreite 390 px, Scrollbreite 390 px, kein horizontaler Überlauf. Keine browserübergreifende oder echte Geräte-Labortestabdeckung. GitHub Actions «Check & build» für Commit e3d30bb erfolgreich (Run 43724008415).
-
-## Vor echtem Launch
-
-1. RESEARCH_PROMPTS.md abarbeiten und DATA.md befüllen.
-2. Finder fachlich prüfen, Budget und vergleichbare Akustikdaten in echtes Eignungsranking einbauen.
-3. Betreiber-/Hostingangaben und Geschäftsbedingungen vervollständigen.
-4. Sprachpfade/SEO bei öffentlichem Produktlaunch von Hash-Routing auf vorgerenderte Seiten migrieren.
-5. Echte Partnervermittlung mit benannten Empfängern und ausdrücklicher Nutzerentscheidung anschliessen.
-6. Öffentliche Vorschau über GitHub Pages konfigurieren, dann Workflow manuell starten. Keine anderen Repositories anlegen oder verbinden.
-
-## Veröffentlichung
-
-GitHub Pages ist noch nicht aktiviert. Die Connector-Werkzeuge können diese Administrationsoption nicht setzen; die Browserprüfung der Repository-Einstellungen zeigte eine nicht angemeldete Sitzung. Ein öffentlicher Deployment-Link wurde deshalb nicht behauptet. Einmalig Settings → Pages → Source: GitHub Actions wählen und danach den vorbereiteten Pages-Workflow starten. Es wurde ausschliesslich das vereinbarte Repository genutzt.
+`npm run check`, `npm test`, `npm run build`. 24 gezielte Tests u. a. zu Miet-/Ruhe-Fall, fehlendem Aussenplatz, Unsicherheit, geänderten Ableitungen, zu geringer Leistung, Lieferdaten, Budget und vier Sprachversionen. Browser-QA: vollständiger DE-Ablauf, Miet-/Ruhe-/Ohne-Montage-Richtung, geänderte Antwort, Abbrechen, freiwillige Präzisierung und Vergleich geprüft. DE bei 390 × 844 und EN bei 320 × 650 ohne horizontalen Überlauf. Veröffentlichungsstatus wird im Abschlussbericht bestätigt.

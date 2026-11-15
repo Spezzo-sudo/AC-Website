@@ -257,3 +257,21 @@ body{background:white}
 .page-intro{padding-top:0}
 }
 
+@media(max-width:600px){
+ .finder-body .choices.four .choice{min-height:105px;font-size:11px;gap:10px}
+ .finder-body .finder-toggle{font-size:11px;padding:12px}
+ .fact-row legend{font-size:12px}
+ .fact-answers{gap:6px}
+ .fact-option{font-size:10px;min-height:44px}
+ .fact-list{gap:20px}
+ .finder-sub{margin-bottom:22px}
+ .context-fields{grid-template-columns:1fr}
+ .optional-context summary{font-size:20px}
+ .optional-context summary>span{display:block;margin-left:0;font-size:10px}
+ .edit-links{gap:9px 15px}
+ .edit-links .text-link{font-size:10px}
+ .comparison-tabs{gap:9px}
+ .comparison-tabs>a:last-child{display:block;width:100%;margin-top:8px}
+ .result-check{padding:17px}
+ .cost-panel .cost-fields{grid-template-columns:1fr 1fr}
+}

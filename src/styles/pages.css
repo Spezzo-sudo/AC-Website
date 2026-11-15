@@ -51,3 +51,10 @@
 .text-content>p{font-size:17px;color:var(--muted);line-height:1.9}
 .text-content h2{font-size:29px;margin:40px 0 20px}
 
+.comparison-tabs{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:25px}
+.comparison-tabs>a{font-size:11px}
+.comparison-group{margin-bottom:40px}
+.comparison-group>h2{font-size:25px;margin-bottom:22px}
+.comparison-method{max-width:650px;margin:0 0 30px}
+.match-label{line-height:1.6;align-items:flex-start}
+.match-label .icon{margin-top:2px}

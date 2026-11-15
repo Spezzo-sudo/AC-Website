@@ -1,5 +1,7 @@
 // Every interface string lives here. Add a locale column and register it below.
+import {finderMessages} from './finder-messages.js';
 const rows = {
+...finderMessages,
 room:['Raum','Pièce','Stanza','Room'], heat:['Wärmesituation','Exposition','Calore','Heat scenario'], tenure:['Wohnsituation','Statut du logement','Situazione abitativa','Living situation'], priority:['Priorität','Priorité','Priorità','Priority'], skip:['Zum Inhalt','Aller au contenu','Vai al contenuto','Skip to content'],
 navFinder:['Klima-Finder','Guide climatisation','Trova clima','Climate finder'],navCompare:['Lösungen vergleichen','Comparer les solutions','Confronta soluzioni','Compare solutions'],navRules:['Kanton & Bewilligung','Canton & autorisations','Cantone e permessi','Canton & permits'],navGuide:['Gut zu wissen','Bon à savoir','Da sapere','Good to know'],start:['Mein Klima finden','Trouver ma solution','Trova la mia soluzione','Find my climate'],
 prototype:['Vorschau · Geräte, Preise und Rechtsinformationen sind noch nicht verifiziert.','Aperçu · Appareils, prix et informations juridiques non vérifiés.','Anteprima · Apparecchi, prezzi e informazioni legali non verificati.','Preview · Devices, prices and legal information are not yet verified.'],

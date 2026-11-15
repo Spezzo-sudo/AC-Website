@@ -20,10 +20,14 @@ Für spätere Datensätze ergänzen: Geräteart, feste/mobile Installation, Inne
 
 ## Berechnung
 
-`estimateCapacity()` ist **nur ein nicht validiertes Demo-Modell**: 70 / 90 / 110 W/m² je Wärmeszenario, ±20 %. Diese Faktoren sind redaktionelle Beispielannahmen, keine behauptete Norm. Vor Veröffentlichung als belastbare Orientierung durch Fachperson und belastbare Quelle ersetzen.
+`estimateCapacity()` ist **nur ein nicht validiertes Demo-Modell**: 70 W/m² Basis +20 bei Sonne +40 bei Dachlage, ±20 %. Diese Faktoren sind redaktionelle Beispielannahmen, keine behauptete Norm. Vor Veröffentlichung als belastbare Orientierung durch Fachperson und belastbare Quelle ersetzen.
 
-`energyCost()` berechnet konstante elektrische Aufnahme × Stunden/Tag × Tage × CHF/kWh. Beispielprofile verwenden angenommene Aufnahmen von 0,65 / 0,85 / 1,0 kW; keine Herstellerdaten. Der Rechner modelliert weder Teillast noch Klima oder Wirkungsgradverlauf. Jahresverbrauch nie als garantierten Betrag ausgeben.
+`energyCost()` berechnet konstante elektrische Aufnahme × Stunden/Tag × Tage × CHF/kWh. Der Ergebnisrechner verwendet eine frei editierbare angenommene elektrische Aufnahme, unabhängig vom Geräteprofil; keine Herstellerdaten. Der Rechner modelliert weder Teillast noch Klima oder Wirkungsgradverlauf. Jahresverbrauch nie als garantierten Betrag ausgeben.
 
 ## Sprachen
 
 `src/i18n/messages.js` hält alle funktionalen UI-Texte für DE/FR/IT/EN. Neue Sprache in `locales`, `localeNames` und jeder Zeile ergänzen. Ein Test prüft Vollständigkeit. Fach- und Rechtsübersetzungen brauchen vor Launch eine inhaltliche Prüfung. Kanton-Namen bleiben amtlich/gebräuchlich mehrsprachig. Technische Symbole und optionale englische Designbeschriftungen sind sprachübergreifend.
+
+## Persönliche Treffer
+
+Nur Haupt- und Alternativklasse der aktuellen Orientierung werden angeboten. Ausgeschlossene Klassen und Geräte unterhalb der oberen Grenze der illustrativen Leistungsspanne werden ausgefiltert. Bekannte Preise können das Budget überschreiten und dann ausgeschlossen werden. Fehlende Preise werden nie als Budgettreffer ausgegeben. Der freie Vergleich bleibt separat zugänglich. Siehe FINDER.md.

@@ -23,7 +23,7 @@ npm run build
 ## Enthalten
 
 - Responsive Startseite mit eigener Raumillustration und Gerätevisualisierungen, keine externen Fonts oder Bilddienste.
-- Fünfstufiger Finder: Raum/Nutzung, Fläche, Wärme, Miet-/Eigentumssituation, Montage, Kanton/Gemeinde, Priorität und Budget.
+- Vier Kernansichten: Raum, Grösse/Wärme, Wunsch, räumliche Möglichkeiten. Maximal zwei überspringbare Präzisierungen; Kanton, Wohnstatus und Budget danach freiwillig.
 - Geräteart mit nachvollziehbarer Begründung, offengelegter Beispielrechnung für Kühlleistung und anpassbarem Stromkostenrechner.
 - Vergleich und Händlerdialoge mit ausdrücklich fiktiven Geräteprofilen.
 - 26 Kantone mit offenen Abklärungsfragen, ohne erfundene Rechtsauskunft.
@@ -35,7 +35,7 @@ npm run build
 
 Die Website ist eine **funktionierende Konzeptversion**, kein angeschlossener Marktplatz. Es gibt keine echten Modelle, Händlerpreise, Lieferzusagen, Affiliate-Verträge, Rechtsbewertungen oder Montagepartner. Betreiber und Hosting sind zu ergänzen. Ein Banner kennzeichnet den Datenstand, `noindex` verhindert beabsichtigte Suchmaschinenindexierung; es ist keine Zugriffssperre. Eine öffentliche Vorschau enthält keine vertraulichen Daten.
 
-Die Empfehlung wählt derzeit ausschliesslich eine Geräteart anhand Montageoption und Priorität. Fläche und Wärmeszenario verändern die illustrative Leistungsspanne. Raumnutzung, Wohnstatus und Budget werden für die spätere Fachabklärung erfasst; sie lösen noch keine validierte gerätespezifische Optimierung aus. Budget- und Lärmabgleich werden ausdrücklich als offen ausgewiesen. Geräteleistung und tatsächliche Eignung sind separat zu prüfen. Keine Fachplanung und keine Bewilligungsfreigabe.
+Die Empfehlung verwendet vier Gerätearten und wenige explizite Voraussetzungen, qualitative Wunsch-Reihenfolgen und eigene Zustände für offene bzw. ausgeschlossene Wege. Bekannte Angaben werden wiederverwendet; Zustimmung wird separat geprüft. Bei mehreren Räumen oder mehr als 80 m² verweist sie auf Fachplanung. Der persönliche Beispielvergleich trennt Haupttreffer und Alternativen und filtert nach der oberen Grenze der ausdrücklich unvalidierten Beispiel-Leistungsspanne. Fehlende Preise bleiben ein offener Budgetabgleich. Fachliche Details und Grenzen stehen in [docs/FINDER.md](docs/FINDER.md).
 
 ## Architektur
 
@@ -54,6 +54,8 @@ Die Empfehlung wählt derzeit ausschliesslich eine Geräteart anhand Montageopti
 
 ## Hosting im gleichen Repository
 
-Der Workflow **Check & build** prüft jeden Push/PR und stellt das gebaute `dist/` als Actions-Artefakt bereit. **Deploy preview to GitHub Pages** ist manuell auslösbar und veröffentlicht ausschliesslich aus diesem Repository. Vor der ersten Ausführung in GitHub unter **Settings → Pages → Build and deployment → Source: GitHub Actions** einstellen. Dafür sind Repository-Administratorrechte nötig. Diese Einstellung wird von den verfügbaren GitHub-Connector-Werkzeugen nicht angeboten und ist nicht Teil des Quellcodes. Kein Deployment auf `klimafinder.ch` und keine DNS-Änderung erfolgt automatisch.
+Cloudflare Pages veröffentlicht `main` aus **Spezzo-sudo/AC-Website** automatisch. Projekt: `klimafinder-preview`, URL: https://klimafinder-preview.pages.dev. Build: `npm run build`, Ausgabe: `dist`, Node.js 22. Es ist keine eigene Domain verbunden. `klimafinder.ch` wird nicht umgestellt.
+
+Der Workflow **Check & build** prüft Pushes und PRs. Der frühere manuelle GitHub-Pages-Workflow ist als ungenutzte Hostingalternative vorhanden; für Cloudflare ist keine Pages-Aktivierung in GitHub nötig.
 
 Für dauerhaftes SEO und öffentliches Produktlaunch später statische Sprachpfade mit individuell generierten Metadaten statt Hash-Routen einführen. Der jetzige modulare Seitenaufbau kann dafür übernommen werden.

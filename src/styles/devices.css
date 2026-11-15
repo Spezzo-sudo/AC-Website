@@ -26,3 +26,5 @@
 .device-external i{position:absolute;inset:15px;background:repeating-linear-gradient(90deg,#b3bdad 0 2px,transparent 2px 4px);border-radius:50%}
 .device-pipe{position:absolute;width:75px;height:60px;border:7px solid #f1f1e7;border-top:0;border-radius:0 0 22px 22px;bottom:-7px;right:66px}
 
+.device--fixedMonoblock .device-body{width:145px;height:110px;border-radius:10px;transform:rotate(-3deg)}
+.device--fixedMonoblock .device-vent{height:38%;top:45%;background:repeating-linear-gradient(0deg,#a6b0a3 0 1px,#e5e9de 1px 5px)}
