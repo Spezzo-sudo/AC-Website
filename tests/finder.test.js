@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {defaults,estimateCapacity,energyCost,recommendType,rankProducts,parseAnswers} from '../src/domain/finder.js';
+import {products} from '../src/data/products.js';
+import {cantons} from '../src/data/cantons.js';
+import {locales,dictionaries} from '../src/i18n/messages.js';
+import {finder} from '../src/components/finder.js';
+import {translator} from '../src/i18n/messages.js';
+test('capacity is transparent and responds to area and heat',()=>{assert.deepEqual(estimateCapacity(25),{low:1.4,high:2.1,wattsPerM2:70});assert.ok(estimateCapacity(50).high>estimateCapacity(25).high);assert.ok(estimateCapacity(25,'roof').high>estimateCapacity(25,'normal').high);for(const value of [0,121,NaN,Infinity,'invalid'])assert.throws(()=>estimateCapacity(value));});
+test('cost uses electrical input, not cooling capacity',()=>{assert.equal(energyCost(.85,5,60,.3),76.5);assert.equal(energyCost(0,5,60,.3),0);assert.throws(()=>energyCost(-1,5,60,.3));assert.throws(()=>energyCost(NaN,5,60,.3));});
+test('unknown or denied installation does not recommend fixed installation',()=>{for(const installation of ['no','unsure'])for(const priority of ['quiet','efficiency','budget'])assert.notEqual(recommendType({...defaults,installation,priority}),'split');assert.equal(recommendType({...defaults,installation:'yes'}),'split');});
+test('unverified Swiss stock never enters production recommendations',()=>{assert.deepEqual(rankProducts(defaults,products),[]);assert.equal(rankProducts(defaults,products,{includeDemo:true}).length,3);const fixtures=[{id:'valid',type:'mobile',swissDeliveryVerified:true,availability:'inStock'},{id:'out',type:'mobile',swissDeliveryVerified:true,availability:'outOfStock'},{id:'not-ch',type:'mobile',swissDeliveryVerified:false,availability:'inStock'}];assert.deepEqual(rankProducts(defaults,fixtures).map(p=>p.id),['valid']);});
+test('all 26 cantons explicitly remain unverified',()=>{assert.equal(cantons.length,26);assert.equal(new Set(cantons.map(c=>c.code)).size,26);assert.ok(cantons.every(c=>c.status==='unverified'&&c.sources.length===0&&c.reviewedAt===null));});
+test('malformed inputs fall back to validated defaults',()=>{const result=parseAnswers({area:-5,installation:'hack',priority:'fake',hours:50,tariff:'NaN',municipality:'a'.repeat(90)});assert.equal(result.area,defaults.area);assert.equal(result.installation,'unsure');assert.equal(result.hours,5);assert.equal(result.municipality.length,80);});
+test('all locale dictionaries have complete translations',()=>{const keys=Object.keys(dictionaries.de);for(const locale of locales){assert.deepEqual(Object.keys(dictionaries[locale]),keys);for(const key of keys)assert.ok(typeof dictionaries[locale][key]==='string'&&dictionaries[locale][key].length>0,`${locale}.${key}`);}});
+test('municipality is escaped when re-opening finder',()=>{const html=finder(translator('de'),{...defaults,municipality:'"><img src=x onerror=alert(1)>'},3);assert.ok(!html.includes('<img src=x'));assert.ok(html.includes('&lt;img'));});

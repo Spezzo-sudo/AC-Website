@@ -1,0 +1,28 @@
+.device{transition:transform .35s}
+.solution-card:hover .device{transform:translateY(-5px) rotate(-2deg)}
+.pill{position:absolute;top:14px;left:14px;padding:7px 10px;background:#fafbf1bb;border:1px solid #fff8;font-size:8px;font-weight:500;border-radius:30px;letter-spacing:.02em}
+.solution-index{position:absolute;bottom:15px;right:17px;font-family:Georgia,serif;font-style:italic;font-size:19px;color:#7c8b70}
+.solution-copy{padding:23px 4px 0}
+.solution-copy h3{display:flex;align-items:center;justify-content:space-between;font-size:18px}
+.solution-copy .icon{width:17px}
+.solution-copy p{font-size:11px;color:var(--muted);margin-top:12px;max-width:95%}
+
+.device{position:relative;width:240px;height:130px;display:flex;align-items:center;justify-content:center}
+.device-body{position:relative;background:linear-gradient(165deg,#fffef7,#e3e5da);box-shadow:0 15px 20px #50614a20,inset -3px -3px 6px #c7ccc1;border:1px solid #e6e9dd}
+.device--split .device-body{width:226px;height:66px;border-radius:10px;transform:rotate(-4deg);box-shadow:0 22px 22px #50614a22,inset 0 -5px 8px #d2d7ca}
+.device-vent{position:absolute;left:9%;right:9%;height:6px;bottom:15%;background:repeating-linear-gradient(0deg,#6b7569 0 1px,#a4ada0 1px 2px);border-radius:0 0 4px 4px}
+.device-led{position:absolute;right:13%;top:29%;width:3px;height:3px;border-radius:50%;background:#9bae86}
+.device-brand{position:absolute;top:17%;left:12%;font-size:8px;color:#98a38c}
+.device--mobile{height:175px;width:150px}
+.device--mobile .device-body{width:102px;height:148px;border-radius:13px 13px 18px 18px;transform:rotate(5deg)}
+.device--mobile .device-vent{height:45%;top:28%;left:15%;right:15%;background:repeating-linear-gradient(0deg,#a3ada1 0 2px,#d3d9cc 2px 5px);border-radius:6px}
+.device--mobile .device-led{right:40%;top:12%;width:18px;height:4px;border-radius:2px;background:#8a9b80}
+.device--mobile .device-brand{top:80%;left:43%;font-size:7px}
+.device-wheels{position:absolute;bottom:9px;width:76px;border-left:7px solid #6b7267;border-right:7px solid #6b7267;height:10px;transform:rotate(5deg)}
+.device--portableSplit{height:155px}
+.device--portableSplit .device-body{width:100px;height:134px;border-radius:10px;transform:rotate(-4deg);z-index:2;margin-right:57px}
+.device--portableSplit .device-vent{height:50%;top:27%;background:repeating-linear-gradient(0deg,#a6b0a3 0 1px,#e5e9de 1px 5px);border-radius:4px}
+.device-external{position:absolute;right:21px;bottom:10px;width:97px;height:90px;border-radius:7px;background:linear-gradient(135deg,#efeee6,#d4d7c8);box-shadow:8px 12px 15px #50614a19;transform:rotate(6deg)}
+.device-external i{position:absolute;inset:15px;background:repeating-linear-gradient(90deg,#b3bdad 0 2px,transparent 2px 4px);border-radius:50%}
+.device-pipe{position:absolute;width:75px;height:60px;border:7px solid #f1f1e7;border-top:0;border-radius:0 0 22px 22px;bottom:-7px;right:66px}
+
